@@ -19,6 +19,9 @@ sudo: required
 language: python
 
 # https://github.com/travis-ci/travis-ci/issues/5142#issuecomment-158563862
+arch:
+  - amd64
+  - ppc64le
 
 matrix:
   include:
