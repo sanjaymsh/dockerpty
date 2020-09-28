@@ -19,9 +19,6 @@ sudo: required
 language: python
 
 # https://github.com/travis-ci/travis-ci/issues/5142#issuecomment-158563862
-arch:
-  - amd64
-  - ppc64le
 
 matrix:
   include:
@@ -34,6 +31,21 @@ matrix:
       services:
         - docker
     - python: "3.4"
+      env: REQUIREMENTS=requirements3-dev.txt VENV=python3.4
+      services:
+        - docker
+    - python: "2.7"
+      arch: ppc64le
+      env: REQUIREMENTS=requirements-dev.txt VENV=python2.7
+      services:
+        - docker
+    - python: "pypy"
+      arch: ppc64le
+      env: REQUIREMENTS=requirements-dev.txt VENV=pypy
+      services:
+        - docker
+    - python: "3.4"
+      arch: ppc64le
       env: REQUIREMENTS=requirements3-dev.txt VENV=python3.4
       services:
         - docker
